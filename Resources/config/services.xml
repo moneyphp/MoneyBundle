@@ -6,7 +6,7 @@
     <services>
         <service id="moneyphp.currencies" class="\Money\Currencies\AggregateCurrencies">
             <argument type="collection">
-                <argument type="service" id="money.iso.currencies" />
+                <argument type="service" id="moneyphp.iso.currencies" />
             </argument>
         </service>
         <service id="moneyphp.iso.currencies" class="\Money\Currencies\ISOCurrencies" public="false" />
