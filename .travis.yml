@@ -1,10 +1,9 @@
 language: php
 
 php:
-    - 5.6
-    - 7.0
-    - 7.1
-    - hhvm
+    - 7.2
+    - 7.3
+    - 7.4
 
 env:
     global:
@@ -13,14 +12,16 @@ env:
 matrix:
     fast_finish: true
     include:
-        - php: 5.6
-          env: SYMFONY_VERSION=3.0.*
-        - php: 5.6
-          env: SYMFONY_VERSION=3.1.*
-        - php: 5.6
-          env: SYMFONY_VERSION=3.2.*
-        - php: 5.6
-          env: SYMFONY_VERSION=3.3.*
+        - php: 7.2
+          env: SYMFONY_VERSION=4.0.*
+        - php: 7.2
+          env: SYMFONY_VERSION=4.1.*
+        - php: 7.2
+          env: SYMFONY_VERSION=4.2.*
+        - php: 7.2
+          env: SYMFONY_VERSION=4.3.*
+        - php: 7.2
+          env: SYMFONY_VERSION=4.4.*
 
 before_install:
     - travis_retry composer self-update
