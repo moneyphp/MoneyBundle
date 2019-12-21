@@ -6,24 +6,21 @@
     "keywords": ["money"],
     "homepage": "https://github.com/moneyphp/MoneyBundle",
     "require": {
-        "php": ">=5.4",
-        "symfony/framework-bundle": "^2.7|^3.0",
+        "php": ">=7.2",
+        "symfony/framework-bundle": "^4.0",
         "moneyphp/money": "^3.0"
     },
     "require-dev": {
-        "symfony/symfony": "^2.7|^3.0",
-        "phpunit/phpunit": "^4.4",
-        "matthiasnoback/symfony-config-test": "^1.4",
-        "matthiasnoback/symfony-dependency-injection-test": "^0.7.6"
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
-            "Money\\MoneyBundle\\": ""
+            "Money\\MoneyBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Money\\MoneyBundle\\": "Tests/"
+            "Tests\\Money\\MoneyBundle\\": "tests/"
         }
     },
     "scripts": {
