@@ -1,11 +1,13 @@
 <?php
+declare(strict_types=1);
 
 namespace Tests\Money\MoneyBundle\DependencyInjection;
 
 use Money\MoneyBundle\MoneyBundle;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class MoneyExtensionTest extends \PHPUnit_Framework_TestCase
+final class MoneyExtensionTest extends TestCase
 {
     /**
      * Goal of this test is container not to throw exception when it is compiled.

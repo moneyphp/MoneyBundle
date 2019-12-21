@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Money\MoneyBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -15,13 +17,5 @@ final class MoneyExtension extends ConfigurableExtension
             __DIR__ . '/../Resources/config/',
         ]));
         $loader->load('services.xml');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getConfiguration(array $config, ContainerBuilder $container)
-    {
-        return new Configuration(true);
     }
 }
