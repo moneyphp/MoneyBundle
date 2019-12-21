@@ -15,12 +15,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Money\\MoneyBundle\\": ""
+            "Money\\MoneyBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Money\\MoneyBundle\\": "Tests/"
+            "Tests\\Money\\MoneyBundle\\": "tests/"
         }
     },
     "scripts": {
