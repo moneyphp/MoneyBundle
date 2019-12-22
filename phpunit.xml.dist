@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="vendor/autoload.php">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         colors="true"
+         verbose="true"
+         bootstrap="vendor/autoload.php"
+>
     <testsuites>
-        <testsuite name="Money Bundle Test Suite">
-            <directory>Tests/</directory>
+        <testsuite name="AllTests">
+            <directory>tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">./</directory>
-            <exclude>
-                <directory>Resources/</directory>
-                <directory>Tests/</directory>
-                <directory>vendor/</directory>
-            </exclude>
+            <directory suffix=".php">src/</directory>
         </whitelist>
     </filter>
+    <logging>
+        <log type="coverage-html" target="build/coverage"/>
+        <log type="coverage-text" target="build/coverage.txt"/>
+    </logging>
 </phpunit>
