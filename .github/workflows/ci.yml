@@ -35,6 +35,7 @@ jobs:
       max-parallel: 10
       matrix:
         php: ['7.2', '7.3', '7.4']
+        symfony_version: ['4.0.*', '4.1.*', '4.2.*', '4.3.*', '4.4.*', '5.0.*']
 
     steps:
       - name: Set up PHP

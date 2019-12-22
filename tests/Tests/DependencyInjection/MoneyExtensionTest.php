@@ -12,7 +12,7 @@ final class MoneyExtensionTest extends TestCase
     /**
      * Goal of this test is container not to throw exception when it is compiled.
      */
-    public function testThatContainerCanBeCompliled()
+    public function testThatContainerCanBeCompiled()
     {
         $bundle = new MoneyBundle();
         $extension = $bundle->getContainerExtension();
@@ -20,5 +20,7 @@ final class MoneyExtensionTest extends TestCase
         $extension->load([], $container);
         $bundle->build($container);
         $container->compile();
+
+        $this->expectNotToPerformAssertions();
     }
 }

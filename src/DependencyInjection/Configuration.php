@@ -17,6 +17,14 @@ final class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        return new TreeBuilder('moneyphp');
+        $treeBuilder = new TreeBuilder('moneyphp');
+        // Keep compatibility with symfony/config < 4.2
+        if (!method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->root('moneyphp');
+        } else {
+            $rootNode = $treeBuilder->getRootNode();
+        }
+
+        return $treeBuilder;
     }
 }
