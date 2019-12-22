@@ -49,15 +49,18 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v1
-
-      - name: Echo
-        run: echo "$SYMFONY_REQUIRE"
+        env:
+          SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
 
       - name: Install flex
         run: composer global require --no-progress --no-scripts --no-plugins symfony/flex
+        env:
+          SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
 
       - name: Install dependencies
         run: composer update --no-interaction --prefer-dist
+        env:
+          SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
 
       - name: Run tests
         run: make test
