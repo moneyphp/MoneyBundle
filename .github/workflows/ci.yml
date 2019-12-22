@@ -36,8 +36,6 @@ jobs:
       matrix:
         php: ['7.2', '7.3', '7.4']
         symfony_version: ['4.0.*', '4.1.*', '4.2.*', '4.3.*', '4.4.*', '5.0.*']
-    env:
-      SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
 
     steps:
       - name: Set up PHP
@@ -46,9 +44,14 @@ jobs:
           php-version: ${{ matrix.php }}
           coverage: xdebug
           extension-csv: mbstring
+        env:
+          SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
 
       - name: Checkout code
         uses: actions/checkout@v1
+
+      - name: Echo
+        run: echo "$SYMFONY_REQUIRE"
 
       - name: Install flex
         run: composer global require --no-progress --no-scripts --no-plugins symfony/flex
