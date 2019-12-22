@@ -54,7 +54,7 @@ jobs:
       - name: Install dependencies
         run: composer update --no-interaction --prefer-dist
         env:
-          - SYMFONY_REQUIRE=${{ matrix.symfony_version }}
+          - SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
 
       - name: Run tests
         run: make test
