@@ -35,7 +35,7 @@ jobs:
       max-parallel: 10
       matrix:
         php: ['7.2', '7.3', '7.4']
-        symfony_version: ['4.0.*', '4.1.*', '4.2.*', '4.3.*', '4.4.*', '5.0.*']
+        symfony_version: ['4.2.*', '4.3.*', '4.4.*', '5.0.*']
 
     steps:
       - name: Set up PHP
@@ -50,11 +50,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          export SYMFONY_REQUIRE=${{ matrix.symfony_version }}
           composer global require --no-progress --no-scripts --no-plugins symfony/flex
           composer update --no-interaction --prefer-dist
-#        env:
-#          SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
+        env:
+          SYMFONY_REQUIRE: ${{ matrix.symfony_version }}
 
       - name: Run tests
         run: make test
