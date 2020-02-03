@@ -20,6 +20,7 @@ class MoneyPHPType extends AbstractType
         $resolver
             ->setDefaults([
                 'data_class' => Money::class,
+                'currencies_preferred_choices' => [],
             ]);
     }
 
@@ -30,7 +31,9 @@ class MoneyPHPType extends AbstractType
     {
         $builder
             ->add('amount', NumberType::class)
-            ->add('currency', CurrencyMoneyPHPType::class)
+            ->add('currency', CurrencyMoneyPHPType::class, [
+                'preferred_choices' => $options['currencies_preferred_choices'],
+            ])
         ;
     }
 }
