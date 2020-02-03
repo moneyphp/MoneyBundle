@@ -48,7 +48,7 @@ class CurrencyMoneyPHPType extends AbstractType
                         }, iterator_to_array($this->currencies)
                     );
 
-                    ksort($currencies);
+                    sort($currencies);
 
                     return array_combine($currencies, $currencies);
                 }),
