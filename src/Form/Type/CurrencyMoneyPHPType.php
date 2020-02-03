@@ -52,6 +52,7 @@ class CurrencyMoneyPHPType extends AbstractType
 
                     return array_combine($currencies, $currencies);
                 }),
+                'choice_translation_domain' => false,
             ])
         ;
     }
